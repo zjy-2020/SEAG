@@ -62,7 +62,7 @@
     <div class="container is-max-widescreen">
       <div class="columns is-centered">
         <div class="column is-full">
-          <h1 class="title is-1 publication-title">Semantic-Emotional Disentanglement and Alignment for Controllable Co-Speech Gesture Generation</h1>
+          <h1 class="title is-1 publication-title">SEAG: Semantic–Emotional Alignment for Expressive Co-Speech Gesture Generation</h1>
 
 <div class="column has-text-centered">
                         <div class="publication-links">
@@ -113,58 +113,6 @@
                     </div>
           
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-widescreen">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-      Co-speech gesture generation aims to synthesize 3D motions that are semantically consistent and rhythmically aligned with speech. Despite recent advances in diffusion-based approaches, they struggle with the inherent entanglement of linguistic semantics and affective prosody, where high-intensity emotional cues often override semantic grounding, leading to the ``semantic drift" phenomenon. To address this, we propose the Semantic-Emotional Aligned Gesture (SEAG) framework. SEAG employs a dual-stream architecture to disentangle semantic content from emotional expression via a cross-reconstruction strategy, enforcing semantic invariance while isolating emotion as a controllable modulation factor. Subsequently, we introduce an asymmetric bidirectional alignment mechanism, leveraging a Transformer-based integrator to map these features into a structured joint driving manifold. By anchoring expressive dynamics to linguistic invariants, this manifold provides a high-fidelity conditioning signal for a latent diffusion model. The orthogonality of our disentangled streams is validated through Mutual Information (MI) estimation and classifier leakage tests. Extensive experiments on the BEAT2, TED Emotion, and SHOW datasets demonstrate that SEAG achieves state-of-the-art performance, notably yielding a 15.57% reduction in FGD and a 5.0% improvement in SRGR on the TED Emotion benchmark. Furthermore, SEAG exhibits robust zero-shot generalization on out-of-distribution data, ensuring precise emotional controllability without compromising communicative clarity.
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-  
- <!--<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3" style="text-align: center;">Method</h2>
-    <center>
-      <div class="hero-body">
-        <img src="static/image/pipeline1.png"/>
-        <p>
-          The pipeline of GranuMamba model. Stage 1: A GraphConv-VQ-VAE discretizes gesture motion into a codebook of tokens. 
-          Stage 2: Speech, text, and identity features condition two Mamba-based streams: a fine-grained branch for local hand motions 
-          and a coarse-grained branch for global dynamics. A gated fusion integrates both, and the GraphConv-Temporal decoder 
-          reconstructs realistic gestures.
-        </p>
-      </div>
-    </center>
-  </div>
-</section> -->
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<section class="hero teaser">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-3" style="text-align: center;">Method</h2>
-    <div class="hero-body">
-      <center>
-        <img src="static/image/pipeline1.png" alt="IACG Framework Pipeline" style="width: 100vw; max-width: 1200px; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);"/>
-      </center>
-      
-      <div class="content has-text-justified" style="margin-top: 20px; line-height: 1.6;">
-        <p>
-          <strong>Overview of the proposed SEAG framework.</strong> The pipeline consists of two phases: Stage 1: Input speech is first processed by frozen encoders to extract semantic \( z_s \) and emotional \( z_e \) features. These features undergo Bidirectional Alignment (Semantic-to-Emotional and Emotional-to-Semantic) to produce refined, mutually consistent representations \( z'_s, z'_e\), which are integrated via \( \mathcal{F}(\cdot) \) to formulate the joint driving manifold \( z_{fuse} \). 
-Stage 2: We utilize a VQ-VAE based Motion Prior to compress motion into a latent space. A diffusion model then synthesizes motion latents conditioned on the unified driving manifold, where \( sg[\cdot] \) denotes the stop-gradient operation to decouple the training of the prior and the diffusion transformer.
-     </p>
       </div>
     </div>
   </div>
